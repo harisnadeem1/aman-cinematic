@@ -2,31 +2,59 @@
 
 :root {
   --background: #050816;
-  --foreground: #ffffff;
+  --surface: #0b1023;
+  --surface-2: #11162b;
+
+  --foreground: #f8fafc;
+  --muted: #94a3b8;
+  --muted-2: #64748b;
 
   --primary: #c084fc;
+  --primary-hover: #a855f7;
   --secondary: #f9a8d4;
 
-  --muted: #94a3b8;
+  --border: rgba(255, 255, 255, 0.1);
+  --glow: rgba(192, 132, 252, 0.35);
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+
+  --space-2: 0.5rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
-html,
-body {
-  width: 100%;
-  min-height: 100%;
-  background: var(--background);
-  color: var(--foreground);
-
+html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
 }
 
 body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at top, rgba(192, 132, 252, 0.12), transparent 35%),
+    linear-gradient(to bottom, #050816, #070b1a);
+  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+a,
+button {
+  transition: all 180ms ease;
+}
+
+::selection {
+  background: rgba(192, 132, 252, 0.3);
+  color: var(--foreground);
 }
